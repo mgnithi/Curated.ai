@@ -1,6 +1,6 @@
 {
   "name": "curated-ai",
-  "homepage":"https://mgnithi.github.io/Curated.ai/"
+  "homepage":"https://mgnithi.github.io/Curated.ai/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
