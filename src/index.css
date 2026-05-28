@@ -1,0 +1,153 @@
+/* ─────────────────────────────────────────────────────────────
+   Curated.ai — Global Stylesheet
+   Load order matters: Tailwind directives must come first.
+───────────────────────────────────────────────────────────── */
+
+/* 1. Tailwind layers — required for all utility classes to work */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ── Base resets & document defaults ─────────────────────────── */
+@layer base {
+  /* Smooth font rendering on macOS / iOS */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Full-height app shell */
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Default body background matches the slate-50 used on all screens */
+  body {
+    @apply bg-slate-50 text-slate-800;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Remove default button / input browser chrome */
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    outline: none;
+  }
+
+  /* Prevent text selection on interactive elements */
+  button {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Smooth scrolling everywhere */
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+
+/* ── Reusable component classes ──────────────────────────────── */
+@layer components {
+
+  /* ── Brand colours as utilities ── */
+  .bg-brand-navy  { background-color: #1E2A6E; }
+  .bg-brand-teal  { background-color: #0F8A8D; }
+  .bg-teal-light  { background-color: #E6F5F5; }
+  .text-brand-navy { color: #1E2A6E; }
+  .text-brand-teal { color: #0F8A8D; }
+  .border-brand-teal { border-color: #0F8A8D; }
+
+  /* ── Curated card — white rounded shadow card ── */
+  .curated-card {
+    @apply bg-white rounded-2xl shadow-card border border-slate-200;
+  }
+
+  /* ── Primary button (teal) ── */
+  .btn-primary {
+    @apply w-full py-3 bg-[#0F8A8D] hover:bg-[#0c7477]
+           text-white font-semibold rounded-md
+           transition-colors duration-150
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+
+  /* ── Ghost / outline button ── */
+  .btn-ghost {
+    @apply px-4 py-2 rounded-full border border-slate-200
+           text-slate-600 text-sm
+           hover:border-[#0F8A8D] hover:text-[#0F8A8D]
+           transition-colors duration-150;
+  }
+
+  /* ── Form input ── */
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-100 rounded-md
+           text-slate-800 placeholder-slate-500
+           focus:outline-none focus:ring-2 focus:ring-[#0F8A8D] focus:bg-white
+           transition-colors duration-150;
+  }
+
+  /* ── Interest chip (unselected) ── */
+  .interest-chip {
+    @apply w-full flex items-center gap-3 px-4 py-3 rounded-lg border
+           bg-slate-50 border-slate-200 text-slate-700
+           hover:border-[#0F8A8D]
+           transition-all duration-150 text-left;
+  }
+
+  /* ── Interest chip (selected) ── */
+  .interest-chip-active {
+    @apply bg-[#E6F5F5] border-[#0F8A8D] text-[#0F8A8D];
+  }
+
+  /* ── Feed card ── */
+  .feed-card {
+    @apply bg-white rounded-xl border border-slate-200
+           shadow-card hover:shadow-card-hover
+           transition-shadow duration-150 overflow-hidden cursor-pointer;
+  }
+
+  /* ── Ad banner ── */
+  .ad-banner {
+    @apply w-full py-3 px-4 bg-slate-100
+           border border-dashed border-slate-300 rounded-lg
+           flex items-center justify-center gap-2
+           text-xs text-slate-400;
+  }
+
+  /* ── Premium upsell strip ── */
+  .upsell-banner {
+    @apply bg-[#E6F5F5] border border-[#0F8A8D] rounded-xl
+           px-5 py-4 text-center space-y-2;
+  }
+}
+
+
+/* ── Utilities not in Tailwind core ──────────────────────────── */
+@layer utilities {
+  /* Hide scrollbar (used on horizontal chip rows) */
+  .scrollbar-hide {
+    -ms-overflow-style: none;   /* IE / Edge */
+    scrollbar-width: none;       /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;               /* Chrome / Safari */
+  }
+
+  /* Tap highlight removal on mobile */
+  .tap-none {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Safe area padding for phones with a notch / home bar */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+  }
+}
