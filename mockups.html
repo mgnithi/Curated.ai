@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Curated.ai — Login Mockups</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0e0e0e;
+    color: #fff;
+    padding: 48px 24px 80px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 12px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 56px;
+    color: #f1f1f1;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .card-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #666;
+    padding-left: 4px;
+  }
+  .label span {
+    color: #f1f1f1;
+    font-size: 14px;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-top: 2px;
+    text-transform: none;
+  }
+  .screen {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* ── 1. AURORA GLASS (current direction extended) ──────────────── */
+  .aurora {
+    background: linear-gradient(135deg, #1E2A6E 0%, #2D1B69 35%, #0F5A8D 70%, #0F8A8D 100%);
+  }
+  .aurora::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(192,132,252,.55), transparent 70%);
+    filter: blur(40px);
+  }
+  .aurora::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; right: -40px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(249,115,22,.4), transparent 70%);
+    filter: blur(40px);
+  }
+  .aurora-card {
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 24px;
+    padding: 36px 28px;
+  }
+  .aurora-icon {
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #C084FC, #0F8A8D);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 20px;
+  }
+  .aurora-card h3 { text-align: center; font-size: 20px; font-weight: 700; color: #fff; }
+  .aurora-card p  { text-align: center; font-size: 12px; color: rgba(255,255,255,.5); margin-top: 4px; margin-bottom: 24px; }
+  .aurora-input {
+    width: 100%; padding: 12px 14px; border-radius: 12px;
+    background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.18);
+    color: #fff; font-size: 13px; font-family: inherit;
+    margin-bottom: 10px; outline: none;
+  }
+  .aurora-input::placeholder { color: rgba(255,255,255,.35); }
+  .aurora-btn {
+    width: 100%; padding: 13px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, #C084FC, #0F8A8D);
+    color: #fff; font-weight: 600; font-size: 14px; cursor: pointer;
+    margin-top: 4px; font-family: inherit;
+    box-shadow: 0 6px 24px rgba(192,132,252,.4);
+  }
+  .aurora-link { display: block; text-align: center; margin-top: 14px; font-size: 12px; color: #67e8f9; }
+
+  /* ── 2. MINIMAL EDITORIAL ──────────────────────────────────────── */
+  .editorial { background: #fafaf8; }
+  .editorial-card {
+    width: 300px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 44px 36px;
+    border: 1px solid #e8e4df;
+  }
+  .editorial-card .overline {
+    font-size: 10px; font-weight: 700; letter-spacing: .18em;
+    text-transform: uppercase; color: #B08B5A; margin-bottom: 20px;
+  }
+  .editorial-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 700; color: #1a1207; line-height: 1.2;
+    margin-bottom: 28px;
+  }
+  .editorial-input {
+    width: 100%; padding: 0 0 10px; border: none; border-bottom: 1.5px solid #d6d0c8;
+    font-size: 13px; font-family: inherit; color: #1a1207;
+    background: transparent; outline: none; margin-bottom: 20px; display: block;
+  }
+  .editorial-input::placeholder { color: #b0a898; }
+  .editorial-btn {
+    width: 100%; padding: 13px; border: none; border-radius: 2px;
+    background: #1a1207; color: #fafaf8;
+    font-family: inherit; font-size: 13px; font-weight: 600;
+    letter-spacing: .06em; cursor: pointer; margin-top: 8px;
+  }
+  .editorial-link { font-size: 12px; color: #B08B5A; display: block; text-align: center; margin-top: 16px; }
+  .editorial .corner {
+    position: absolute; top: 24px; right: 28px;
+    font-size: 11px; color: #b0a898; letter-spacing: .04em;
+  }
+
+  /* ── 3. DARK PREMIUM / OBSIDIAN ────────────────────────────────── */
+  .obsidian { background: #0a0a0a; }
+  .obsidian::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(234,179,8,.06), transparent 65%);
+  }
+  .obsidian-card {
+    position: relative; z-index: 2;
+    width: 300px;
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 20px;
+    padding: 36px 28px;
+  }
+  .obsidian-badge {
+    display: inline-block; padding: 4px 10px; border-radius: 999px;
+    border: 1px solid rgba(234,179,8,.35); background: rgba(234,179,8,.08);
+    font-size: 10px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: #EAB308; margin-bottom: 20px;
+  }
+  .obsidian-card h3 { font-size: 22px; font-weight: 700; color: #f5f5f5; margin-bottom: 6px; }
+  .obsidian-card p  { font-size: 12px; color: #555; margin-bottom: 28px; }
+  .obsidian-input {
+    width: 100%; padding: 12px 14px; border-radius: 10px;
+    background: #1a1a1a; border: 1px solid #2a2a2a;
+    color: #f5f5f5; font-size: 13px; font-family: inherit;
+    margin-bottom: 10px; outline: none;
+  }
+  .obsidian-input::placeholder { color: #444; }
+  .obsidian-btn {
+    width: 100%; padding: 13px; border-radius: 10px; border: none;
+    background: linear-gradient(135deg, #EAB308, #CA8A04);
+    color: #0a0a0a; font-weight: 700; font-size: 14px;
+    cursor: pointer; margin-top: 4px; font-family: inherit;
+    letter-spacing: .02em;
+  }
+  .obsidian-link { display: block; text-align: center; margin-top: 14px; font-size: 12px; color: #555; }
+  .obsidian-link span { color: #EAB308; }
+
+  /* ── 4. SOFT SUNRISE / WARM ──────────────────────────────────────── */
+  .sunrise { background: linear-gradient(160deg, #FFF7ED 0%, #FEF3C7 50%, #FDE8D8 100%); }
+  .sunrise-blob1 {
+    position: absolute; top: -40px; right: -40px;
+    width: 220px; height: 220px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(251,146,60,.3), transparent 70%);
+    filter: blur(30px);
+  }
+  .sunrise-blob2 {
+    position: absolute; bottom: -30px; left: -30px;
+    width: 180px; height: 180px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(167,139,250,.25), transparent 70%);
+    filter: blur(30px);
+  }
+  .sunrise-card {
+    position: relative; z-index: 2;
+    width: 300px;
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 28px;
+    padding: 36px 28px;
+    box-shadow: 0 8px 40px rgba(251,146,60,.15);
+  }
+  .sunrise-logo {
+    width: 48px; height: 48px; border-radius: 16px;
+    background: linear-gradient(135deg, #F97316, #A78BFA);
+    margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 16px rgba(249,115,22,.35);
+  }
+  .sunrise-card h3 { text-align: center; font-size: 20px; font-weight: 700; color: #1c1917; margin-bottom: 4px; }
+  .sunrise-card p  { text-align: center; font-size: 12px; color: #a8a29e; margin-bottom: 24px; }
+  .sunrise-input {
+    width: 100%; padding: 12px 14px; border-radius: 12px;
+    background: rgba(255,255,255,.8); border: 1.5px solid #fde8d8;
+    color: #1c1917; font-size: 13px; font-family: inherit;
+    margin-bottom: 10px; outline: none;
+  }
+  .sunrise-input::placeholder { color: #c4b5a5; }
+  .sunrise-btn {
+    width: 100%; padding: 13px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, #F97316, #EC4899);
+    color: #fff; font-weight: 600; font-size: 14px;
+    cursor: pointer; margin-top: 4px; font-family: inherit;
+    box-shadow: 0 6px 20px rgba(249,115,22,.4);
+  }
+  .sunrise-link { display: block; text-align: center; margin-top: 14px; font-size: 12px; color: #F97316; }
+</style>
+</head>
+<body>
+
+<h1>Curated.ai</h1>
+<h2>Login Screen — Design Directions</h2>
+
+<div class="grid">
+
+  <!-- 1. AURORA GLASS -->
+  <div class="card-wrap">
+    <div class="label">A <span>Aurora Glass</span></div>
+    <div class="screen aurora">
+      <div class="aurora-card">
+        <div class="aurora-icon">✦</div>
+        <h3>Curated.ai</h3>
+        <p>Your interests. Your feed. Your way.</p>
+        <input class="aurora-input" type="email" placeholder="Email" />
+        <input class="aurora-input" type="password" placeholder="Password" />
+        <button class="aurora-btn">Sign In</button>
+        <a class="aurora-link">Create account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MINIMAL EDITORIAL -->
+  <div class="card-wrap">
+    <div class="label">B <span>Minimal Editorial</span></div>
+    <div class="screen editorial">
+      <div class="editorial-card">
+        <div class="overline">Curated.ai</div>
+        <h3>Sign in to your account</h3>
+        <input class="editorial-input" type="email" placeholder="Email address" />
+        <input class="editorial-input" type="password" placeholder="Password" />
+        <button class="editorial-btn">Continue →</button>
+        <a class="editorial-link">Don't have an account? Create one</a>
+      </div>
+      <div class="corner">v1.0</div>
+    </div>
+  </div>
+
+  <!-- 3. DARK PREMIUM -->
+  <div class="card-wrap">
+    <div class="label">C <span>Dark Premium</span></div>
+    <div class="screen obsidian">
+      <div class="obsidian-card">
+        <div class="obsidian-badge">✦ Curated.ai</div>
+        <h3>Welcome back.</h3>
+        <p>Sign in to continue to your feed.</p>
+        <input class="obsidian-input" type="email" placeholder="Email" />
+        <input class="obsidian-input" type="password" placeholder="Password" />
+        <button class="obsidian-btn">Sign In</button>
+        <a class="obsidian-link">New here? <span>Create account</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SOFT SUNRISE -->
+  <div class="card-wrap">
+    <div class="label">D <span>Soft Sunrise</span></div>
+    <div class="screen sunrise">
+      <div class="sunrise-blob1"></div>
+      <div class="sunrise-blob2"></div>
+      <div class="sunrise-card">
+        <div class="sunrise-logo">☀</div>
+        <h3>Curated.ai</h3>
+        <p>Your interests. Your feed. Your way.</p>
+        <input class="sunrise-input" type="email" placeholder="Email" />
+        <input class="sunrise-input" type="password" placeholder="Password" />
+        <button class="sunrise-btn">Sign In</button>
+        <a class="sunrise-link">Create account</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
